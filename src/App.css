@@ -20,3 +20,44 @@
 .animate-fade-in-up {
   animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+
+/* Certificate Card Animations */
+.certificate-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Carousel Track Smooth Transitions */
+.certificate-carousel-track {
+  will-change: transform;
+}
+
+/* Responsive adjustments for certificates */
+@media (max-width: 768px) {
+  .certificate-card {
+    animation-delay: 0s !important; /* Reset delays on mobile for better performance */
+  }
+}
+
+/* Optional: Add smooth hover effects for carousel buttons */
+.carousel-nav-button {
+  transition: all 0.3s ease;
+}
+
+.carousel-nav-button:hover {
+  transform: scale(1.05);
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}

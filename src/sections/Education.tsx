@@ -35,7 +35,7 @@ const EDUCATION = [
     institution: "Hluzingqondo Senior Secondary School",
     location: "Kwaggafontein, South Africa",
     date: "01/2014 – 11/2016",
-  }
+  },
 ];
 
 const CERTIFICATES = [
@@ -62,14 +62,14 @@ const CERTIFICATES = [
     issuer: "Cisco",
     date: "2025",
     image: "https://www.credly.com/badges/6b6d4f8d-aec2-4b51-bb14-8f56ce02f729",
-  }
+  },
 ];
 
 export default function Education() {
   const sectionRef = useRef<HTMLElement>(null);
   const labelRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const certificateCardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const certificateCardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -145,12 +145,6 @@ export default function Education() {
 
     return () => ctx.revert();
   }, []);
-
-  // Get visible certificates based on screen size
-  const getVisibleCertificates = () => {
-    const itemsToShow = isMobile ? 1 : 3;
-    return CERTIFICATES.slice(currentIndex, currentIndex + itemsToShow);
-  };
 
   return (
     <section
@@ -246,7 +240,7 @@ export default function Education() {
             <div className="overflow-hidden px-2">
               <div
                 ref={carouselContainerRef}
-                className="flex gap-4 md:gap-6 transition-transform duration-500 ease-out"
+                className="flex gap-4 md:gap-6 transition-transform duration-500 ease-out certificate-carousel-track"
                 style={{
                   transform: `translateX(-${currentIndex * (isMobile ? 100 : 33.333)}%)`,
                 }}
@@ -264,10 +258,9 @@ export default function Education() {
                       }}
                       className={`flex-shrink-0 ${
                         isMobile ? "w-full" : "w-1/3"
-                      } glass-card p-5 md:p-6 opacity-0 hover:border-[var(--color-primary)]/30 transition-all duration-300 block`}
+                      } glass-card p-5 md:p-6 opacity-0 hover:border-[var(--color-primary)]/30 transition-all duration-300 block certificate-card`}
                       style={{
-                        opacity: 0,
-                        animation: `fadeInUp 0.6s ease-out ${idx * 0.1}s forwards`
+                        animationDelay: `${idx * 0.1}s`
                       }}
                     >
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-teal-50 flex items-center justify-center mb-3 md:mb-4">
@@ -312,19 +305,6 @@ export default function Education() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }
