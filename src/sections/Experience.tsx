@@ -9,7 +9,7 @@ const EXPERIENCES = [
   {
     title: 'Data Engineer',
     company: 'EPF Innovation Campus',
-    url: 'https://aicampus.co.za/', // Added URL
+    url: '#',
     date: '04/2024 – 07/2025',
     responsibilities: [
       'Designed ETL processes for data extraction, transformation, and loading into the data warehouse',
@@ -22,7 +22,7 @@ const EXPERIENCES = [
   {
     title: 'Software Engineer',
     company: 'Digication',
-    url: 'https://digication.co.za/', // Added URL
+    url: '#',
     date: '04/2024 – 03/2025',
     responsibilities: [
       'Developed web applications with Vue.js and JavaScript',
