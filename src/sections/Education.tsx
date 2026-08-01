@@ -57,12 +57,6 @@ const CERTIFICATES = [
     date: "2025",
     image: "https://www.credly.com/badges/6b6d4f8d-aec2-4b51-bb14-8f56ce02f729",
   },
-  {
-    title: "Data Analytics Essentials",
-    issuer: "Cisco",
-    date: "2025",
-    image: "https://www.credly.com/badges/6b6d4f8d-aec2-4b51-bb14-8f56ce02f729",
-  },
 ];
 
 export default function Education() {
