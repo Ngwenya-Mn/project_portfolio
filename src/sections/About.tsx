@@ -151,14 +151,7 @@ export default function About() {
               {/* Decorative background glow */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary)]/20 to-[var(--color-secondary)]/20 rounded-full blur-3xl"></div>
 
-              {/* Main Glass Card */}
-              <div className="relative w-full h-full glass-card flex items-center justify-center overflow-hidden">
-                {/* Abstract geometric background inside the card */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-10 left-10 w-20 h-20 border-4 border-[var(--color-primary)] rounded-full"></div>
-                  <div className="absolute bottom-10 right-10 w-32 h-32 border-4 border-[var(--color-secondary)] rotate-45"></div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
